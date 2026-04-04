@@ -66,6 +66,29 @@ O Claude DEVE ler o arquivo de referência relevante ANTES de executar o comando
 4. **Comparativo**: sempre comparar com período anterior quando possível
 5. **Priorizar**: ordenar alertas e recomendações por impacto financeiro (maior economia primeiro)
 
+## Detecção do Python correto (OBRIGATÓRIO)
+
+Antes de rodar qualquer script, detectar qual `python3` tem os SDKs instalados.
+Rodar UMA VEZ no início da sessão e reutilizar o caminho:
+
+```bash
+# Detectar Python com facebook-business (Meta Ads)
+PYTHON=$(python3 -c "import facebook_business; print('OK')" 2>/dev/null && echo "python3" || \
+  (/opt/homebrew/bin/python3 -c "import facebook_business; print('OK')" 2>/dev/null && echo "/opt/homebrew/bin/python3") || \
+  echo "NONE")
+```
+
+Se `NONE`: orientar o usuário a instalar o SDK (`pip3 install facebook-business`).
+
+Depois de detectar, SEMPRE usar esse Python pra todos os scripts da sessão:
+```bash
+$PYTHON ~/.claude/skills/meta-ads-ratos/scripts/read.py accounts
+```
+
+**Por que isso é necessário:** no Mac existem dois Pythons (system e Homebrew).
+Os SDKs ficam no Homebrew (`/opt/homebrew/bin/python3`) mas o `python3` do PATH
+pode ser o system (que não tem os pacotes). Detectar uma vez evita erros.
+
 ## Detecção de skills de execução
 
 Antes de executar, verificar quais skills estão disponíveis:
