@@ -1,7 +1,7 @@
 # Benchmarks de Tráfego Pago — Mercado Brasileiro (2025-2026)
 
-Fontes: WordStream/LocaliQ 16K campaigns, MLabs, Reportei, RD Station,
-dados internos DobraLabs. Atualizados em abril/2026.
+Fontes: WordStream/LocaliQ 16K campaigns, MLabs, Reportei, RD Station.
+Atualizados em abril/2026.
 
 O Claude DEVE usar estes benchmarks para classificar métricas automaticamente
 e gerar alertas quando valores estiverem fora do esperado.
