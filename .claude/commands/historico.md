@@ -115,17 +115,16 @@ Se sim, registrar automaticamente com as métricas do momento.
 
 ---
 
-### 2026-04-03 — Pausou criativo Store 2 (Objeção)
+### 2026-04-03 — Pausou criativo com baixa conversão
 
-**Ação:** Pausou o criativo "AD Store 2 - Objeção" nas campanhas
-"Checkout Direto" e "Lista de Espera" (IDs: 120244531387200457, 120244531387200458)
+**Ação:** Pausou o criativo "AD Store 2 - Objeção" nas campanhas de venda
 **Motivo:** Gasto de R$79 com 24 checkouts mas 0 vendas — desperdício
 **Hipótese:** CPL geral da campanha deve cair ~15% sem esse criativo
 **Métricas antes:**
 - Gasto campanha: R$ 30/dia
 - CPL: R$ 19,18
 - CTR: 1.28%
-- Criativo Store 2: R$ 11/dia, 0 vendas
+- Criativo problemático: R$ 11/dia, 0 vendas
 
 **Métricas depois (avaliado em 2026-04-10):**
 - Gasto campanha: R$ 30/dia
@@ -137,9 +136,9 @@ Se sim, registrar automaticamente com as métricas do momento.
 
 ---
 
-### 2026-03-28 — Aumentou orçamento Checkout Direto
+### 2026-03-28 — Aumentou orçamento de campanha top
 
-**Ação:** Orçamento diário de R$30 → R$50 na campanha "Checkout Direto"
+**Ação:** Orçamento diário de R$30 → R$50 na campanha principal de vendas
 **Motivo:** CPA dentro da meta por 10 dias consecutivos, margem pra escalar
 **Hipótese:** Manter CPA em R$19 com 60% mais volume
 **Métricas antes:**
