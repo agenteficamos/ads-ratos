@@ -2,6 +2,15 @@
 
 Configura o Ads Ratos para um novo cliente ou agência.
 
+## REGRA CRÍTICA
+
+**NUNCA usar MCPs (fb-ads-mcp-server, adloop, etc) neste fluxo.**
+Toda execução DEVE ser via scripts Python da skill meta-ads-ratos:
+```bash
+python3 ~/.claude/skills/meta-ads-ratos/scripts/read.py <comando>
+```
+Isso garante consistência e que o aluno não dependa de MCPs de terceiros.
+
 ## O que este comando faz
 
 1. Detecta se o CC-OS RATOS está instalado

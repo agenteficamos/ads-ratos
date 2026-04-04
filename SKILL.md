@@ -58,7 +58,8 @@ O Claude DEVE ler o arquivo de referência relevante ANTES de executar o comando
 
 ## Regras gerais
 
-1. **Benchmarks BR**: sempre usar benchmarks do mercado brasileiro (não americano)
+1. **NUNCA usar MCPs**: toda execução DEVE ser via scripts Python das skills Ratos (meta-ads-ratos, google-ads-ratos, ga4-ratos). Nunca usar fb-ads-mcp-server, adloop ou qualquer outro MCP de terceiro. Isso garante consistência e independência.
+2. **Benchmarks BR**: sempre usar benchmarks do mercado brasileiro (não americano)
 2. **Terminologia PT-BR**: nunca usar termos em inglês no output (spend → gasto, reach → alcance, etc)
 3. **Números sempre**: alertas e recomendações devem ter números específicos, nunca vagos
 4. **Comparativo**: sempre comparar com período anterior quando possível

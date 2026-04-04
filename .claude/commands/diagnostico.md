@@ -3,6 +3,14 @@
 Gera um diagnóstico completo da conta de anúncios com Health Score,
 KPIs, alertas automáticos e recomendações priorizadas.
 
+## REGRA CRÍTICA
+
+**NUNCA usar MCPs (fb-ads-mcp-server, adloop, etc) neste fluxo.**
+Toda execução DEVE ser via scripts Python da skill meta-ads-ratos:
+```bash
+python3 ~/.claude/skills/meta-ads-ratos/scripts/<script>.py <comando>
+```
+
 ## O que este comando faz
 
 1. Puxa dados reais das APIs (Meta e/ou Google)
