@@ -57,6 +57,19 @@ Se não houver contas cadastradas, guiar o setup.
 
 O Claude DEVE ler o arquivo de referência relevante ANTES de executar o comando.
 
+## Aprendizados (memória persistente)
+
+**Arquivo:** `aprendizados.md` (na raiz da skill, `~/.claude/skills/ads-ratos/aprendizados.md`)
+
+O Claude DEVE:
+1. **Ler `aprendizados.md` no início de QUALQUER comando** (diagnóstico, relatório, auditoria)
+2. **Quando o usuário corrigir algo**, perguntar: "Quer que eu registre isso nos aprendizados pra não esquecer nas próximas vezes?"
+3. **Quando o usuário pedir** ("lembra disso", "registra", "anota"), registrar imediatamente
+4. **Ser proativo**: se o usuário pedir pra refazer ou ajustar algo que já foi gerado, perguntar se quer registrar a correção
+5. **Não duplicar** — verificar se já existe regra similar antes de adicionar
+
+Cada skill de execução (meta-ads-ratos, google-ads-ratos, ga4-ratos) tem seu próprio `aprendizados.md` pra regras específicas da plataforma. O do ads-ratos é pra regras gerais (formato de relatório, preferências de visualização, etc).
+
 ## Regras gerais
 
 1. **NUNCA usar MCPs**: toda execução DEVE ser via scripts Python das skills Ratos (meta-ads-ratos, google-ads-ratos, ga4-ratos). Nunca usar fb-ads-mcp-server, adloop ou qualquer outro MCP de terceiro. Isso garante consistência e independência.
