@@ -2,31 +2,263 @@
 # Ads Ratos — Cadastro de Contas
 # ============================================================================
 #
-# Preencha este arquivo com as contas de cada cliente.
-# O Claude consulta este arquivo automaticamente quando tu mencionares
-# o nome do cliente (ex: "diagnóstico do Meu Cliente").
+# O Claude consulta este arquivo automaticamente quando voce mencionar
+# o nome do cliente (ex: "diagnostico do Mercado das Carnes").
 #
-# Rode `/ads-ratos setup` pra preencher de forma guiada.
+# Nichos disponiveis (ver references/benchmarks-br.md):
+#   ecommerce-moda, ecommerce-tech, infoprodutos, saas-b2b, servicos-locais,
+#   imoveis, saude-estetica, educacao, financeiro, alimentacao
 #
 # ============================================================================
 
 clientes:
 
-  # -- Exemplo (descomente e edite) --
-  #
-  # meu-cliente:
-  #   nome: "Nome do Cliente"
-  #   nicho: "e-commerce"       # pra benchmarks (ver references/benchmarks-br.md)
-  #   meta:
-  #     conta_anuncio: "act_XXXXXXXXX"
-  #     pagina_facebook: "XXXXXXXXX"
-  #     instagram_id: "XXXXXXXXX"
-  #     instagram_username: "@username"
-  #   google:
-  #     customer_id: "XXX-XXX-XXXX"
-  #   ga4:
-  #     property_id: "XXXXXXXXX"
-  #   moeda: "BRL"
-  #   notas: ""
+  mercado-casa-das-carnes:
+    nome: "Mercado e Casa das Carnes"
+    nicho: "alimentacao"
+    meta:
+      conta_anuncio: "act_664091054946599"
+      pagina_facebook: "107253433332033"
+      instagram_id: "17841439137229288"
+      instagram_username: "@mercadoecasadascarnes"
+    google:
+      customer_id: "4879230488"
+    moeda: "BRL"
+    notas: "G1. Cliente mais antigo (jan/2022). Objetivo: WhatsApp."
 
-  # -- Teus clientes abaixo --
+  agropet-center:
+    nome: "Agropet Center"
+    nicho: "servicos-locais"
+    meta:
+      conta_anuncio: "act_886663979675267"
+      pagina_facebook: "106839607845322"
+      instagram_id: "17841438382046331"
+      instagram_username: "@_agropetcenter"
+    moeda: "BRL"
+    notas: "G2. Petshop + consultorio veterinario."
+
+  atelie-claudia-salvador:
+    nome: "Atelie Claudia Salvador"
+    nicho: "ecommerce-moda"
+    meta:
+      conta_anuncio: "act_1342469939279894"
+      pagina_facebook: "301618139700566"
+      instagram_id: "17841411587932671"
+      instagram_username: "@claudiasalvadoratelie"
+    google:
+      customer_id: "8214589211"
+    moeda: "BRL"
+    notas: "G1. Atelie catolico, arte sacra personalizada."
+
+  bionatural-medianeira:
+    nome: "Bio Natural Medianeira"
+    nicho: "servicos-locais"
+    meta:
+      conta_anuncio: "act_426653799908688"
+      pagina_facebook: "474083212938151"
+      instagram_id: "17841406958775791"
+      instagram_username: "@bionaturalmedianeira"
+    moeda: "BRL"
+    notas: "G4. Produtos naturais e organicos."
+
+  bionatural-matelandia:
+    nome: "Bio Natural Matelandia"
+    nicho: "servicos-locais"
+    meta:
+      conta_anuncio: "act_2313091205719187"
+      pagina_facebook: "439443415924441"
+      instagram_id: "17841464091902966"
+      instagram_username: "@bionaturalmatelandia"
+    moeda: "BRL"
+    notas: "G4. Produtos naturais e organicos."
+
+  bivia:
+    nome: "Bivia"
+    nicho: "ecommerce-moda"
+    meta:
+      conta_anuncio: "act_2023074712424701"
+      pagina_facebook: "1139574889233094"
+      instagram_id: "17841441543093830"
+      instagram_username: "@usebivia"
+    moeda: "BRL"
+    notas: "G1. Tricô. Ecommerce. Inicio mai/2026."
+
+  busnello-odontologia:
+    nome: "Busnello Odontologia"
+    nicho: "saude-estetica"
+    meta:
+      conta_anuncio: "act_776889565061488"
+      pagina_facebook: "751278738075298"
+      instagram_id: "17841469658614704"
+      instagram_username: "@busnello.odontologia"
+    moeda: "BRL"
+    notas: "G2. Clinica odontologica em Ceu Azul."
+
+  farmacia-super-popular:
+    nome: "Farmacia Super Popular"
+    nicho: "saude-estetica"
+    meta:
+      conta_anuncio: "act_729796581935791"
+      instagram_id: "17841425500649117"
+      instagram_username: "@farmaciasuperpopularmatelandia"
+    moeda: "BRL"
+    notas: "Matelandia. Foco em cosmeticos e plantao."
+
+  flores-papelaria-luce:
+    nome: "Flores e Papelaria Luce"
+    nicho: "servicos-locais"
+    meta:
+      conta_anuncio: "act_255985463151362"
+      pagina_facebook: "178523706008847"
+      instagram_id: "17841406234702195"
+      instagram_username: "@floresepapelarialuce"
+    moeda: "BRL"
+    notas: "G4."
+
+  fran-importados:
+    nome: "Fran Importados"
+    nicho: "ecommerce-tech"
+    meta:
+      conta_anuncio: "act_884951210690437"
+      instagram_id: "17841446255956916"
+      instagram_username: "@fran.imports_"
+    moeda: "BRL"
+    notas: "G4. Celulares, perfumes e acessorios importados."
+
+  g-personalizados:
+    nome: "G Personalizados"
+    nicho: "ecommerce-moda"
+    meta:
+      conta_anuncio: "act_826480862073234"
+      pagina_facebook: "234101253809930"
+      instagram_id: "17841414887418633"
+      instagram_username: "@_gpersonalizados"
+    moeda: "BRL"
+    notas: "G2. Produtos personalizados."
+
+  lanches-custodio:
+    nome: "Lanches Custodio"
+    nicho: "alimentacao"
+    meta:
+      conta_anuncio: "act_516022587380023"
+      pagina_facebook: "108354092189645"
+      instagram_id: "17841400459172962"
+      instagram_username: "@lanchescustodio"
+    google:
+      customer_id: "6958285800"
+    moeda: "BRL"
+    notas: "G4. Lanchonete."
+
+  nova-multimarcas:
+    nome: "Nova Multimarcas"
+    nicho: "servicos-locais"
+    meta:
+      conta_anuncio: "act_4258573634411258"
+      pagina_facebook: "177541533051251"
+      instagram_id: "17841403089327761"
+      instagram_username: "@diegonovamultimarcas_med"
+    moeda: "BRL"
+    notas: "G3. Concessionaria de veiculos multimarcas em Medianeira."
+
+  panificadora-doce-alegria:
+    nome: "Panificadora Doce Alegria"
+    nicho: "alimentacao"
+    meta:
+      conta_anuncio: "act_721599860027947"
+      pagina_facebook: "366802929846726"
+      instagram_id: "17841467318266107"
+      instagram_username: "@doce_alegria_panificadora"
+    moeda: "BRL"
+    notas: "G3. Hibrido: trafego + IA."
+
+  prime-odontologia:
+    nome: "Prime Odontologia"
+    nicho: "saude-estetica"
+    meta:
+      conta_anuncio: "act_493388889091685"
+      pagina_facebook: "439257036282076"
+      instagram_id: "17841406988327935"
+      instagram_username: "@clinicadentariaprimee"
+    moeda: "BRL"
+    notas: "G1. Clinica odontologica em Medianeira."
+
+  seleto-corretores:
+    nome: "Seleto Corretores"
+    nicho: "imoveis"
+    meta:
+      conta_anuncio: "act_520992417541350"
+      pagina_facebook: "108274892113187"
+      instagram_id: "17841456365375379"
+      instagram_username: "@corretoresmedianeira.seleto"
+    moeda: "BRL"
+    notas: "G3. Imobiliaria em Medianeira."
+
+  tamara-freire:
+    nome: "Tamara Freire"
+    nicho: "saude-estetica"
+    meta:
+      conta_anuncio: "act_1112690707728612"
+      pagina_facebook: "768599736340146"
+      instagram_id: "17841400896464494"
+      instagram_username: "@dentistatamarafreire"
+    moeda: "BRL"
+    notas: "G3. Dentista em Matelandia."
+
+  turbo-10:
+    nome: "Turbo 10"
+    nicho: "servicos-locais"
+    meta:
+      conta_anuncio: "act_510878285269378"
+      pagina_facebook: "1101099859975776"
+      instagram_id: "17841407899031509"
+      instagram_username: "@turbo10telecom"
+    google:
+      customer_id: "4645526364"
+    moeda: "BRL"
+    notas: "G1. Telecom local."
+
+  unifacvest:
+    nome: "Unifacvest"
+    nicho: "educacao"
+    meta:
+      conta_anuncio: "act_933100100978898"
+      pagina_facebook: "301035554145993"
+      instagram_id: "17841418506208749"
+      instagram_username: "@unifacvest.matelandia"
+    moeda: "BRL"
+    notas: "G3. Polo universitario em Matelandia. Hibrido: trafego + IA."
+
+  urbano-colchoes:
+    nome: "Urbano Colchoes"
+    nicho: "servicos-locais"
+    meta:
+      conta_anuncio: "act_265299625214689"
+      pagina_facebook: "339176296869861"
+      instagram_id: "17841430478853851"
+      instagram_username: "@urbanocolchoesoficial"
+    google:
+      customer_id: "2881713376"
+    moeda: "BRL"
+    notas: "G1. Loja de colchoes."
+
+  vem-atacarejo:
+    nome: "Vem Atacarejo"
+    nicho: "alimentacao"
+    meta:
+      conta_anuncio: "act_1493749601495493"
+      pagina_facebook: "271089962758920"
+      instagram_id: "17841468137025237"
+      instagram_username: "@vem.atacarejonaturaisoficial"
+    moeda: "BRL"
+    notas: "G2. Atacarejo de produtos naturais."
+
+  ws-uniformes:
+    nome: "WS Uniformes"
+    nicho: "ecommerce-moda"
+    meta:
+      conta_anuncio: "act_882949916994551"
+      pagina_facebook: "114799094838705"
+      instagram_id: "17841444582192718"
+      instagram_username: "@wsuniformes.dtf"
+    moeda: "BRL"
+    notas: "G3. Uniformes e estamparia DTF. Hibrido: trafego + IA."
