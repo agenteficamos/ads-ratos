@@ -69,8 +69,20 @@ Exemplo: não adianta melhorar Quality Score de uma campanha que não converte.
 | QS < 5 + LP ruim | Landing page lenta ou irrelevante | Otimizar velocidade e relevância da LP |
 | Search terms irrelevantes | Faltam negativas | Adicionar negativas (exata ou frase) |
 | CPA alto em Broad Match | Broad sem Smart Bidding | NUNCA usar Broad Match sem Smart Bidding |
-| Impression Share < 20% | Orçamento ou bid baixo | Aumentar orçamento ou melhorar QS |
 | Muitas conversões em marca | Canibalização orgânico | Reduzir bid em marca, investir em genérica |
+
+### Impression Share — diagnóstico por causa da perda
+
+A perda de impressão se divide em duas causas. Olhar **qual** está alta muda a ação:
+
+| Causa | O que significa | Ação |
+|---|---|---|
+| **Lost IS (budget)** | Anúncio deixou de aparecer por **orçamento insuficiente** | Aumentar orçamento; OU restringir match (phrase/exact) e negativar termos de baixa intenção pra reservar verba pro que converte |
+| **Lost IS (rank)** | Anúncio deixou de aparecer por **Ad Rank baixo** (QS + bid fracos) | Melhorar Quality Score (relevância do anúncio + landing page), adicionar extensões (sobem Ad Rank sem subir bid), ou usar Target Impression Share / subir bid |
+
+Regra: **só aumentar orçamento se a perda for por budget.** Se a perda for por rank,
+jogar mais verba não resolve — o problema é qualidade/bid. Conferir no Auction Insights
+em nível de campanha qual das duas domina antes de recomendar.
 
 ---
 
@@ -101,10 +113,33 @@ Exemplo: não adianta melhorar Quality Score de uma campanha que não converte.
 
 | Situação | Estratégia recomendada |
 |---|---|
-| < 30 conversões/mês | Maximizar cliques (com teto de CPC) |
-| 30-50 conversões/mês | Maximizar conversões |
-| 50+ conversões/mês | CPA desejado ou ROAS desejado |
-| Marca | CPC manual (controlar custo) |
+| < 30 conversões/mês | Maximizar conversões (sem tCPA) — junta dados rápido |
+| 30-50 conversões/mês | Maximizar conversões (pode testar tCPA no fim da faixa) |
+| 50+ conversões/mês | tCPA (lead) ou tROAS (e-commerce com valor variável) |
+| Marca | CPC manual ou Maximizar cliques (controlar custo) |
+
+**Thresholds de volume (Smart Bidding 2026):**
+- **tCPA** precisa de **>= 30 conversões nos últimos 30 dias** na campanha pra funcionar bem
+- **tROAS** precisa de **>= 50 conversões nos últimos 30 dias** (precisa de variância de valor pra aprender)
+- **Maximizar conversões** é o caminho pra novas campanhas saírem da learning e juntarem os 30-50 primeiros
+- **Não editar alvo durante learning** — Google recomenda ~3 semanas de runway e ~60 conversões antes de mexer no tCPA/tROAS. Mudar alvo, orçamento >20%, ou criativo reseta o aprendizado.
+
+**Erros que destroem performance:**
+- tROAS em conta com pouca conversão → algoritmo sem dados, gasto trava
+- Trocar de estratégia toda semana → nunca sai da learning
+- tCPA muito agressivo (abaixo do CPA histórico) → volume despenca
+
+### Performance Max (PMax)
+
+| Regra | Detalhe |
+|---|---|
+| **Asset groups** | 3 a 7 por campanha, organizados por tema de produto/serviço (não por público) |
+| **Search themes** | Até 50 por asset group; derivar das keywords que mais convertem no Search |
+| **Negativas** | PMax não aceita negativa em nível de campanha direto — usar negativas em nível de conta (ou pedir ao rep do Google) |
+| **Brand exclusion** | Adicionar a própria marca na lista de exclusão de marca da conta pra PMax não canibalizar busca de marca; adicionar concorrentes que não quer |
+| **Asset ratings** | Asset com rating "Low" → substituir. Buscar maioria "Good"/"Best" |
+| **Não duplicar** | Não duplicar asset group baseado em sinal de público — não funciona mais em 2026 |
+| **Início** | Começar com 1-2 asset groups foco e escalar conforme dados |
 
 ---
 

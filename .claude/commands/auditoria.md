@@ -39,6 +39,12 @@ python3 ~/.claude/skills/meta-ads-ratos/scripts/<script>.py <comando>
 ANTES de qualquer análise, ler:
 - `references/benchmarks-br.md` — benchmarks do mercado brasileiro por nicho
 - `references/quality-gates.md` — regras de decisão, kill rules, health score
+- `references/benchmark-vivo.md` — protocolo de benchmark atualizado via web search
+
+**Benchmark vivo (auditoria mensal):** se o cliente NÃO tem meta de CPL/ROAS definida,
+ou o nicho não está no `benchmarks-br.md`, seguir o `references/benchmark-vivo.md`:
+rodar 1-3 web searches pra pegar o benchmark atualizado do nicho ANTES de classificar
+as métricas. Registrar fonte e data no relatório. Se a busca falhar, usar o estático e avisar.
 
 ### PASSO 2 — Coletar dados Meta Ads (se disponível)
 
@@ -216,6 +222,31 @@ Delta %  = (valor_atual - valor_anterior) / valor_anterior × 100
 | # | Check | Severidade | Condição PASS | Condição ATENÇÃO | Condição FAIL |
 |---|---|---|---|---|---|
 | G10 | Estratégia de bidding adequada | MÉDIO | Bidding compatível com volume de conversões (ver quality-gates.md) | Bidding agressivo para volume atual | Broad Match sem Smart Bidding |
+
+#### Categoria: Cobertura / Impression Share (some à Desperdício — reavaliar peso pra 25%)
+
+| # | Check | Severidade | Condição PASS | Condição ATENÇÃO | Condição FAIL |
+|---|---|---|---|---|---|
+| G11 | Impression Share e causa da perda | ALTO | Search IS > 40% e perda dominante identificada | Search IS 20-40% | Search IS < 20% |
+
+Ao rodar G11, SEMPRE separar **Lost IS (budget)** vs **Lost IS (rank)** e dizer qual domina
+— a ação muda (ver `references/quality-gates.md` › Impression Share). Buscar a métrica via
+`insights.py` da google-ads-ratos (search_impression_share, lost por budget e por rank).
+
+#### Categoria: PMax (só se a conta roda Performance Max — peso 15%, redistribuir)
+
+| # | Check | Severidade | Condição PASS | Condição ATENÇÃO | Condição FAIL |
+|---|---|---|---|---|---|
+| G12 | Saúde dos asset groups PMax | ALTO | 3-7 asset groups temáticos, search themes alinhadas ao Search, brand exclusion ativa, assets majoritariamente "Good/Best" | Alguns assets "Low" ou sem brand exclusion | 1 asset group genérico, assets "Low", sem search themes, canibalizando marca |
+
+Detalhar PMax em: nº de asset groups, ratings de asset (Low/Good/Best), search themes
+presentes, brand exclusion configurada, e se há negativa em nível de conta. Consultar o
+playbook `google-ads-ratos/references/playbooks/pmax.md` pra critérios. Se a conta NÃO
+roda PMax, marcar G12 como "N/A" e não contar no score.
+
+**Nota de pesos:** G11 e G12 são checks adicionais. Quando aplicáveis, somar à categoria mais
+próxima (G11 → Desperdício/Cobertura; G12 → Estrutura) e normalizar o Health Score pelo total
+de checks efetivamente avaliados (os "N/A" saem do denominador).
 
 ### PASSO 7 — Calcular Health Score
 

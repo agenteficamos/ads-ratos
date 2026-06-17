@@ -94,6 +94,7 @@ Se não houver contas cadastradas, guiar o setup.
 |---|---|
 | `references/benchmarks-br.md` | Diagnóstico, relatório e auditoria |
 | `references/quality-gates.md` | Auditoria e diagnóstico |
+| `references/benchmark-vivo.md` | Auditoria mensal, cliente sem meta definida, ou nicho fora da tabela (busca benchmark atualizado na web) |
 
 O Claude DEVE ler o arquivo de referência relevante ANTES de executar o comando.
 

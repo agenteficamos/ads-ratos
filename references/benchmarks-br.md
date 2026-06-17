@@ -92,6 +92,23 @@ e gerar alertas quando valores estiverem fora do esperado.
 | Display | 0.3-0.8% | R$50-150 | 0.5-2.0 |
 | YouTube (views) | 2-5% VTR | R$0.05-0.15/view | n/a |
 
+### CPL por setor (Google Search BR — atualizado jun/2026)
+
+| Setor | CPL típico | CPC típico |
+|---|---|---|
+| Jurídico / Advocacia | R$80-350 | R$12-25 |
+| Saúde / Clínicas | R$15-80 | R$3-8 |
+| Serviços profissionais | R$40-180 | — |
+| Contabilidade / Financeiro | R$50-200 | R$3-10 |
+| Tecnologia / SaaS B2B | R$60-280 | — |
+| Indústria / Manufatura | R$30-150 | — |
+| Educação | R$20-100 | — |
+| Imóveis / Construtoras | R$30-120 | R$2-5 |
+
+> Negócio local pequeno (raio 5-30km) tende a ficar **abaixo** da faixa por menor competição.
+> Em auditoria sem meta definida, revalidar via web search (ver `benchmark-vivo.md`).
+> Tendência 2025→2026: CPC subiu em ~86% dos setores (~+5% a.a.); CTR médio de Search 3,5-6,1%.
+
 ---
 
 ## GA4 — Benchmarks BR
